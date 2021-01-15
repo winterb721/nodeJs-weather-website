@@ -12,7 +12,10 @@ const forecast = (lat, long, callback) => {
                 callback(body.error.info, undefined)
             } else {    
                 const current = body.current;
-                callback(undefined, current.weather_descriptions[0] +'. It is currently ' + current.temperature + ' degrees out. But it feels like ' + current.feelslike )
+                callback(undefined, current.weather_descriptions[0] +'. It is currently ' 
+                + current.temperature + ' degrees out. But it feels like ' + current.feelslike
+                + ' The wind direction is: ' + current.wind_dir + ' wind speed of: ' + current.wind_speed  
+                +' Humidity is: '+ current.humidity)
             }
         })
 }
